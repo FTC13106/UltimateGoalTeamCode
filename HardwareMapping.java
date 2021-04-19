@@ -32,6 +32,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
@@ -62,8 +63,8 @@ public class HardwareMapping
     public DcMotor wobbleGoalMotor = null;
     public CRServo intakeServo = null;
     public CRServo wobbleGoalClampServo = null;
-    public DcMotor inclineMotor = null;
-    private DcMotor conveyorBeltMotor = null;
+    public Servo inclineMotor = null;
+    public DcMotor conveyorBeltMotor = null;
 
 
     //public DcMotor  leftArm     = null;
@@ -99,7 +100,7 @@ public class HardwareMapping
         wobbleGoalMotor = hwMap.get(DcMotor.class, "wobbleGoalMotor");
         intakeServo = hwMap.get(CRServo.class, "intakeServo");
         wobbleGoalClampServo = hwMap.get(CRServo.class, "wobbleGoalClampServo");
- //       inclineMotor = hwMap.get(DcMotor.class, "inclineMotor");
+        inclineMotor = hwMap.get(Servo.class, "inclineMotor");
         conveyorBeltMotor = hwMap.get(DcMotor.class, "conveyorBeltMotor");
 
         // leftArm    = hwMap.get(DcMotor.class, "left_arm");

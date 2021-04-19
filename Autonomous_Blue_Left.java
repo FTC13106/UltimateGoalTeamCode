@@ -90,14 +90,14 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 
             //grab the wooble
            // commands.wobbleGoalClaw(0);
-            commands.wobbleGoalClaw(-0.5,3);
-            sleep(500);
+            commands.wobbleGoalClaw(-1,2);
+            sleep(200);
             //lift the wooble
             commands.woableGoalElevator();
 
             //face forward
             commands.rightRearPivot(-10, 0.5, 3);
-            sleep(200);
+            sleep(500);
 
             //move to A B or C - 0 1 4
             if (rings == 0){
@@ -112,21 +112,24 @@ public class Autonomous_Blue_Left extends LinearOpMode {
                 //drop wobble
                 commands.wobbleGoalClaw(0.5,2);
                 sleep(500);
+                commands.slideRight(48,0.5,5);
+                sleep(200);
+                //turn on shooter motor
+                commands.activateShooter();
+                commands.moveBackwards(12,0.5,3);
+                sleep(200);
+                commands.shootRings(0.25);
+                sleep(4000);
 
-//                commands.slideRight(24,0.5,5);
-//                sleep(200);
-//                commands.moveForward(48,0.5,6);
-//                sleep(200);
                 //park
+                commands.moveForward(12,0.5,3);
 
-//                commands.slideLeft(30,0.5,5);
-//
                 sleep(30000);
 
             }
             else if (rings == 1){
                 //move forward, shoot rings, turn clockwise, move back, drop off wobble, slide right, move forward, slide left and park
-                commands.moveForward(100,0.6,10);
+                commands.moveForward(100,0.7,10);
                 //shoot rings
                 sleep(200);
                 commands.slideRight(24,0.5,2);
@@ -138,41 +141,49 @@ public class Autonomous_Blue_Left extends LinearOpMode {
 //                sleep(200);
 
                 //drop off wobble
-                commands.wobbleGoalClaw(0.5,2);
-                sleep(500);
-
-                commands.slideRight(6,0.5,5);
+                commands.wobbleGoalClaw(0.5,1);
                 sleep(200);
 
-//                commands.moveForward(48,0.5,6);
-//                sleep(200);
-//                commands.slideLeft(30,0.5,5);
+                commands.slideRight(12,0.5,5);
+                sleep(200);
 
-                //park on line
-                commands.moveBackwards(24,0.5,5);
+                //turn orn shooter motor
+                commands.activateShooter();
+
+                commands.moveBackwards(36,0.7,5);
+
+                //shoot rings
+                commands.shootRings(0.25);
+                sleep(3000);
+
+                //park on the line
+                commands.moveForward(12,0.5,3);
 
                 sleep(30000);
 
             }
             else {
                 //move forward shoot forward slide left drop wobble slide right move backward
-                commands.moveForward(130,0.6,10);
+                commands.moveForward(125,1,10);
                 sleep(200);
-                //shoot
-
-//                commands.moveForward(32,0.5,5);
-//                sleep(200);
-//                commands.slideLeft(24,0.5,4);
-//                sleep(200);
-
                 //drop wobble
-                commands.wobbleGoalClaw(0.5,2);
-                sleep(500);
-
-                commands.slideRight(6,0.5,2);
+                commands.wobbleGoalClaw(1,1);
                 sleep(200);
+
+                commands.slideRight(40,0.7,4);
+                sleep(200);
+
+                //turn on shooter motor
+                commands.activateShooter();
+
+                commands.moveBackwards(60 ,1,6);
+                sleep(200);
+                //shoot the rings
+                commands.shootRings(0.25);
+                sleep(3000);
                 //park
-                commands.moveBackwards(48 ,0.5,6);
+                commands.moveForward(12,0.5,2);
+
                 sleep(30000);
             }
 

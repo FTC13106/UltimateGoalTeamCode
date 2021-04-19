@@ -476,5 +476,24 @@ public class Commands extends HardwareMapping{
 
         wobbleGoalMotor.setPower(0);
         wobbleGoalMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-    };
+    }
+
+    public void shootRings(double position){
+
+        //set ramp to position
+        inclineMotor.setPosition(position);
+        //turn on the launcher motor
+        this.activateShooter();
+        conveyorMotor.setDirection(DcMotor.Direction.FORWARD);
+        conveyorBeltMotor.setDirection(DcMotor.Direction.FORWARD);
+        conveyorMotor.setPower(.5);
+        conveyorBeltMotor.setPower(1);
+        intakeServo.setPower(-1);
+
+    }
+
+    public void activateShooter(){
+        launcherMotor.setDirection(DcMotor.Direction.REVERSE);
+        launcherMotor.setPower(1);
+    }
 }
