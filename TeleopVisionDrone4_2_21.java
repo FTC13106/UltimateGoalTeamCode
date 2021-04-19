@@ -1,5 +1,4 @@
 /* Copyright (c) 2019 FIRST. All rights reserved.
-testing
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted (subject to the limitations in the disclaimer below) provided that
@@ -73,49 +72,47 @@ testing
 
 package org.firstinspires.ftc.teamcode;
 
-        import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-        import java.lang.annotation.Target;
-        import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-        import com.qualcomm.robotcore.hardware.CRServo;
-        import com.qualcomm.robotcore.hardware.DcMotor;
-        import com.qualcomm.robotcore.hardware.DcMotorSimple;
-        import com.qualcomm.robotcore.hardware.Servo;
-        import com.qualcomm.robotcore.util.Range;
-        import java.security.PrivateKey;
-        import static java.lang.Math.abs;
+import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
-        /* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV  Vision - Imports  VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
-        import com.qualcomm.robotcore.util.ElapsedTime;
-        import org.firstinspires.ftc.robotcore.external.ClassFactory;
-        import org.firstinspires.ftc.robotcore.external.matrices.OpenGLMatrix;
-        import org.firstinspires.ftc.robotcore.external.matrices.VectorF;
-        import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
-        import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
-        import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackable;
-        import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackableDefaultListener;
-        import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
-        import java.util.ArrayList;
-        import java.util.List;
-        import static java.lang.Math.asin;
-        import static java.lang.Math.sqrt;
-        import static java.lang.Math.toDegrees;
-        import static java.lang.Math.toRadians;
-        import static org.firstinspires.ftc.robotcore.external.navigation.AngleUnit.DEGREES;
-        import static org.firstinspires.ftc.robotcore.external.navigation.AxesOrder.XYZ;
-        import static org.firstinspires.ftc.robotcore.external.navigation.AxesOrder.YZX;
-        import static org.firstinspires.ftc.robotcore.external.navigation.AxesReference.EXTRINSIC;
-        import static org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection.BACK;
-        import com.qualcomm.hardware.bosch.BNO055IMU;
-        import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
-        import org.firstinspires.ftc.robotcore.external.Func;
-        import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
-        import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-        import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
-        import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
-        import org.firstinspires.ftc.robotcore.external.navigation.Position;
-        import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
-        import java.util.Locale;
-        import static java.lang.Math.tan;
+import org.firstinspires.ftc.robotcore.external.ClassFactory;
+import org.firstinspires.ftc.robotcore.external.Func;
+import org.firstinspires.ftc.robotcore.external.matrices.OpenGLMatrix;
+import org.firstinspires.ftc.robotcore.external.matrices.VectorF;
+import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
+import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
+import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
+import org.firstinspires.ftc.robotcore.external.navigation.Position;
+import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackable;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackableDefaultListener;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.asin;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.toDegrees;
+import static org.firstinspires.ftc.robotcore.external.navigation.AngleUnit.DEGREES;
+import static org.firstinspires.ftc.robotcore.external.navigation.AxesOrder.XYZ;
+import static org.firstinspires.ftc.robotcore.external.navigation.AxesOrder.YZX;
+import static org.firstinspires.ftc.robotcore.external.navigation.AxesReference.EXTRINSIC;
+import static org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection.BACK;
+
+/* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV  Vision - Imports  VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 
 /* VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV  Vision - Imports END VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 
