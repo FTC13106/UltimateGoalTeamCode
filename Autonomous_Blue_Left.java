@@ -38,6 +38,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * It uses the common Pushbot hardware class to define the drive on the robot.
  * The code is structured as a LinearOpMode
  *
+ *
  * The code REQUIRES that you DO have encoders on the wheels,
  *   otherwise you would use: PushbotAutoDriveByTime;
  *
