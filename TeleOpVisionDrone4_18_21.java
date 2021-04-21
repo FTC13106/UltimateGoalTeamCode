@@ -509,9 +509,9 @@ public class TeleOpVisionDrone4_18_21 extends LinearOpMode {
                 {
 
                     //Used to reduce joystick sensetivity - read joystick position and reduce to reduce sensetivity to stick movement
-                    RightStickX = 0.75 * gamepad1.right_stick_x;
-                    LeftStickX = 0.75 * gamepad1.left_stick_x;
-                    LeftStickY = 0.75 * gamepad1.left_stick_y;
+                    RightStickX = 1.0 * gamepad1.right_stick_x;
+                    LeftStickX = 1.0 * gamepad1.left_stick_x;
+                    LeftStickY = 1.0 * gamepad1.left_stick_y;
 
 
 
