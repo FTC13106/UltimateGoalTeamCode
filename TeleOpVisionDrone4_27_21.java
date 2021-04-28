@@ -714,7 +714,7 @@ public class TeleOpVisionDrone4_27_21 extends LinearOpMode {
 
                 if (gamepad1.right_bumper) {
 
-                    inclineMotor.setPosition(0.50);
+                    inclineMotor.setPosition(0.70);
                 }
 
                 /*  VVVVVVVVVVVVVVVVVVV  Vision - update IMU for heading tracking  END  VVVVVVVVVVVVVVVVVVVVVVV */
