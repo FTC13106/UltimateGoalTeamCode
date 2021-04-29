@@ -709,7 +709,7 @@ public class TeleOpVisionDrone4_27_21 extends LinearOpMode {
                 // This controls the incline ramp from where the rings are launched. Used to aim the rings at correct angle
                 if (gamepad1.left_bumper) {
 
-                    inclineMotor.setPosition(.70);
+                    inclineMotor.setPosition(.50);
                 }
 
                 if (gamepad1.right_bumper) {
